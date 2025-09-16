@@ -1,99 +1,65 @@
-import React, { useEffect, useState } from "react"; 
+import React, { useEffect, useState } from "react";
 import Papa from "papaparse";
 import "./App.css";
 
 function App() {
-  //概率初始为0，等CSV加载后计算
-  const [positiveProb, setPositiveProb] = useState(0);
-  const [neutralProb, setNeutralProb] = useState(0);
-  const [personProb, setPersonProb] = useState(0);
-  const [objectProb, setObjectProb] = useState(0);
+  const positiveProb = 0.3;
+  const neutralProb = 0.3;
+  const personProb = 0.33;
+  const objectProb = 0.34;
 
   const [excuseDict, setExcuseDict] = useState(null);
   const [result, setResult] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
 
+
   const randomChoice = (arr) => arr[Math.floor(Math.random() * arr.length)];
-
-  //根据字典计算概率
-  const computeProbs = (dict) => {
-    const positive_prob_weight = 1;
-    const neutral_prob_weight = 1;
-    const person_prob_weight = 1;
-    const object_prob_weight = 1;
-
-    const num_special = (dict.special || []).length;
-    const num_person_pos = (dict.positive_person_nouns || []).length *
-      ((dict.positive_person_decorations || []).length +
-       (dict.positive_neutral_decorations || []).length);
-    const num_obj_pos = (dict.positive_object_nouns || []).length *
-      ((dict.positive_object_decorations || []).length +
-       (dict.positive_neutral_decorations || []).length);
-    const num_person_neg = (dict.negative_person_nouns || []).length *
-      ((dict.negative_person_decorations || []).length +
-       (dict.negative_neutral_decorations || []).length);
-    const num_obj_neg = (dict.negative_object_nouns || []).length *
-      ((dict.negative_object_decorations || []).length +
-       (dict.negative_neutral_decorations || []).length);
-
-    const num_neutral =
-      (dict.positive_neutral_decorations || []).length *
-        ((dict.positive_person_nouns || []).length + (dict.positive_object_nouns || []).length) +
-      (dict.negative_neutral_decorations || []).length *
-        ((dict.negative_person_nouns || []).length + (dict.negative_object_nouns || []).length);
-
-    const total_combinations =
-      num_special + num_person_pos + num_obj_pos + num_person_neg + num_obj_neg;
-
-    const positive_p =
-      positive_prob_weight * (num_person_pos + num_obj_pos) / total_combinations;
-    const neutral_p =
-      neutral_prob_weight * num_neutral / total_combinations;
-    const person_p =
-      person_prob_weight * (num_person_pos + num_person_neg) / total_combinations;
-    const object_p =
-      object_prob_weight * (num_obj_pos + num_obj_neg) / total_combinations;
-
-    setPositiveProb(positive_p);
-    setNeutralProb(neutral_p);
-    setPersonProb(person_p);
-    setObjectProb(object_p);
-  };
 
   useEffect(() => {
     const loadCSV = async () => {
       try {
         setLoading(true);
-        const response = await fetch(`${process.env.PUBLIC_URL}/dictionary.csv`);
+        const response = await fetch(`${process.env.PUBLIC_URL}/dictionary1.csv`);
         if (!response.ok) {
           throw new Error(`HTTP error! status: ${response.status}`);
         }
         const csvData = await response.text();
+        
+        //用papa解析CSV
         const parsed = Papa.parse(csvData, {
           header: true,
           skipEmptyLines: true,
           dynamicTyping: false,
-          transformHeader: (header) => header.trim(),
+          transformHeader: (header) => header.trim(), //去除header中的空格
         });
 
         if (parsed.errors.length > 0) {
           console.warn('CSV解析警告:', parsed.errors);
         }
 
+        //将数据转换为按category分组的字典结构
         const groupedData = {};
+        
         parsed.data.forEach(row => {
+          //去除空格
           const category = row.category ? row.category.trim() : '';
           const word = row.word ? row.word.trim() : '';
+          
           if (category && word) {
-            if (!groupedData[category]) groupedData[category] = [];
+            //如果该分类不存在，创建一个新数组
+            if (!groupedData[category]) {
+              groupedData[category] = [];
+            }
+            
+            //添加内容到对应分类
             groupedData[category].push(word);
           }
         });
 
         setExcuseDict(groupedData);
-        computeProbs(groupedData);   // 计算概率
         setError(null);
+       
       } catch (err) {
         console.error('加载CSV文件失败:', err);
         setError(`加载CSV文件失败: ${err.message}`);
@@ -159,6 +125,7 @@ function App() {
     setResult(generate());
   };
 
+  // 初次加载生成一次
   useEffect(() => {
     if (excuseDict) handleGenerate();
   }, [excuseDict]);
@@ -172,7 +139,10 @@ function App() {
       <h1>喷喷借口生成器</h1>
       <div className="boxes-container">
         {isSpecial ? (
-          <div className="single box">{result[1]}</div>
+          <>
+            <div className="single box">{result[1]}</div>
+            
+          </>
         ) : (
           <>
             <div className="box">{result[1]}</div>
@@ -188,4 +158,5 @@ function App() {
 }
 
 export default App;
+
 

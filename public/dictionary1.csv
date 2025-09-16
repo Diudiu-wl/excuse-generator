@@ -26,7 +26,6 @@ special, 别太演了
 special, 演员吧？都想笑了
 special, 真的无语
 special, 我笑了
-special, 有病啊
 special, 好烦
 special, 烦啊
 special, 这也能输吗
@@ -40,7 +39,6 @@ positive_person_nouns, 对面野人
 positive_person_decorations, 有点厉害
 positive_person_decorations, 运气真好
 positive_person_decorations, 好阴啊
-positive_person_decorations, 有小代
 positive_person_decorations, 有点准
 positive_person_decorations, 有问题啊
 positive_person_decorations, 真苟
@@ -95,7 +93,6 @@ negative_person_decorations, 笨比
 negative_person_decorations, 好笨啊
 negative_person_decorations, 漏人了
 negative_person_decorations, 啥比啊
-negative_person_decorations, 脑子有病
 negative_person_decorations, 看不懂规则啊
 negative_person_decorations, 不懂规则啊
 negative_person_decorations, 玩什么呢
@@ -141,9 +138,6 @@ negative_object_decorations, 怎么这么烦
 negative_neutral_decorations, 真恶心
 negative_neutral_decorations, 真垃圾
 negative_neutral_decorations, 红豆泥垃圾
-negative_neutral_decorations, 有病啊
-negative_neutral_decorations, 有病
-negative_neutral_decorations, 有毛病啊
 negative_neutral_decorations, 我真是笑了
 negative_neutral_decorations, 我都想笑了
 negative_neutral_decorations, 我服了
@@ -158,3 +152,5 @@ negative_neutral_decorations, 好烂
 negative_neutral_decorations, 有点烂
 negative_neutral_decorations, 真烂
 negative_neutral_decorations, 不对劲
+negative_neutral_decorations, 不对劲
+

@@ -21,7 +21,7 @@ h1 {
 
 .box {
   flex: 1;
-  padding: 30px 20px;
+  padding: 15px 10px;
   border: 2px solid #ddd;
   border-radius: 8px;
   font-size: 27px;/*27*/
@@ -35,10 +35,7 @@ h1 {
   transition: all 0.3s ease;
 }
 
-.box:hover {
-  border-color: #aaa;
-  background-color: #f0f0f0;
-}
+
 
 .single.box {
   min-width: 30px;
@@ -63,7 +60,7 @@ h1 {
 
 
   @media (max-width: 768px) {
-    .App {
+  .App {
   text-align: center;
   padding: 20px;
   background-color: white;
@@ -74,13 +71,13 @@ h1 {
 
 h1 {
   color: #333;
-  margin-bottom: 30px;
+  margin-bottom: 40px;
 }
 
 .boxes-container {
   display: flex;
   justify-content: space-between;
-  margin-bottom: 30px;
+  margin-bottom: 40px;
   gap: 20px;
 }
 
@@ -90,7 +87,7 @@ h1 {
   border: 2px solid #ddd;
   border-radius: 8px;
   font-size: 20px;/*27*/
-  font-weight: bold;
+  /*font-weight: bold;*/
   color: #333;
   background-color: #f9f9f9;
   min-height: 10px;/*20*/
@@ -100,10 +97,7 @@ h1 {
   transition: all 0.3s ease;
 }
 
-.box:hover {
-  border-color: #aaa;
-  background-color: #f0f0f0;
-}
+
 
 .single.box {
   min-width: 30px;
