@@ -4,7 +4,7 @@
   background-color: white;
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  min-width: 500px;
+  min-width: 500px;/*500*/
 }
 
 h1 {
@@ -24,11 +24,11 @@ h1 {
   padding: 30px 20px;
   border: 2px solid #ddd;
   border-radius: 8px;
-  font-size: 27px;
+  font-size: 27px;/*27*/
   /*font-weight: bold;*/
   color: #333;
   background-color: #f9f9f9;
-  min-height: 30px;
+  min-height: 20px;/*20*/
   display: flex;
   align-items: center;
   justify-content: center;
@@ -41,7 +41,7 @@ h1 {
 }
 
 .single.box {
-  min-width: 300px;
+  min-width: 30px;
   
 }
 
@@ -62,46 +62,69 @@ h1 {
 }
 
 
- 
-        
-        /* 手机设备适配 - 关键部分 */
-        @media (max-width: 768px) {
-            body {
-                padding: 15px;
-            }
-            
-            header {
-                margin-bottom: 20px;
-            }
-            
-            
-            
-            .App {
-                padding: 20px 15px;
-                border-radius: 12px;
-            }
-            
-            /* 保持横向排列但调整间距 */
-            .boxes-container {
-                gap: 15px;
-                margin-bottom: 25px;
-            }
-            
-            .box {
-                padding: 20px 10px;
-                font-size: 18px;
-                min-height: 10px;
-                border-radius: 1px;
-            }
-            
-            .generate-btn {
-                padding: 14px 30px;
-                font-size: 16px;
-            }
-            
-           
-           
-        }
-        
-     
+  @media (max-width: 768px) {
+    .App {
+  text-align: center;
+  padding: 20px;
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  min-width: 300px;/*500*/
+}
 
+h1 {
+  color: #333;
+  margin-bottom: 30px;
+}
+
+.boxes-container {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 30px;
+  gap: 20px;
+}
+
+.box {
+  flex: 1;
+  padding: 30px 20px;
+  border: 2px solid #ddd;
+  border-radius: 8px;
+  font-size: 20px;/*27*/
+  font-weight: bold;
+  color: #333;
+  background-color: #f9f9f9;
+  min-height: 10px;/*20*/
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+}
+
+.box:hover {
+  border-color: #aaa;
+  background-color: #f0f0f0;
+}
+
+.single.box {
+  min-width: 30px;
+  
+}
+
+
+.generate-btn {
+  padding: 12px 30px;
+  font-size: 18px;
+  background-color: #0078D6;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.generate-btn:hover {
+  opacity: 0.8;
+}
+  }
+  
+  
