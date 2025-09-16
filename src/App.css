@@ -66,44 +66,100 @@ h1 {
 }
 
 
-/* 针对手机竖屏 */
-@media screen and (max-width: 600px) and (orientation: portrait) {
-  .App {
-    width: 100%;
-    min-width: auto;       /* 取消固定最小宽度 */
-    padding: 15px;
-    border-radius: 0;      /* 让容器贴合屏幕 */
-    box-shadow: none;      /* 可选：竖屏时去掉阴影 */
-  }
-
-  h1 {
-    font-size: 1.5rem;     /* 缩小标题字号 */
-    margin-bottom: 20px;
-  }
-
-  .boxes-container {
-    flex-direction: column; /* 竖排布局 */
-    gap: 15px;              /* 元素间距 */
-    margin-bottom: 20px;
-    align-items: stretch;   /* 让子元素自动撑满宽度 */
-  }
-
-  .box {
-    font-size: 20px;
-    padding: 20px 15px;
-    min-height: 40px;       /* 保持可点区域 */
-    width: 100%;
-  }
-
-  .single.box {
-    min-width: auto;        /* 去掉固定宽度 */
-    width: 100%;
-  }
-
-  .generate-btn {
-    width: 100%;            /* 按钮占满屏宽 */
-    font-size: 16px;
-    padding: 12px 0;
-  }
-}
+      /* 平板设备适配 */
+        @media (max-width: 1024px) {
+            .App {
+                min-width: 90%;
+                padding: 15px;
+            }
+            
+            h1 {
+                font-size: 1.8rem;
+                margin-bottom: 20px;
+            }
+            
+            .box {
+                padding: 20px 15px;
+                font-size: 24px;
+            }
+        }
+        
+        /* 手机设备适配 */
+        @media (max-width: 768px) {
+            .App {
+                min-width: unset;
+                width: 100%;
+                padding: 15px 10px;
+                border-radius: 8px;
+            }
+            
+            h1 {
+                font-size: 1.5rem;
+                margin-bottom: 20px;
+            }
+            
+            .boxes-container {
+                flex-direction: column;
+                gap: 15px;
+                margin-bottom: 20px;
+            }
+            
+            .box {
+                padding: 20px 10px;
+                font-size: 20px;
+                width: 100%;
+            }
+            
+            .single.box {
+                min-width: unset;
+            }
+            
+            .generate-btn {
+                width: 100%;
+                padding: 15px;
+                font-size: 16px;
+            }
+        }
+        
+        /* 小屏手机适配 */
+        @media (max-width: 480px) {
+            body {
+                padding: 10px;
+            }
+            
+            .App {
+                padding: 15px 8px;
+            }
+            
+            h1 {
+                font-size: 1.3rem;
+                margin-bottom: 15px;
+            }
+            
+            .box {
+                padding: 15px 8px;
+                font-size: 18px;
+            }
+            
+            .generate-btn {
+                padding: 12px;
+                font-size: 15px;
+            }
+        }
+        
+        /* 防止横屏时元素过大 */
+        @media (max-height: 500px) and (orientation: landscape) {
+            body {
+                padding: 10px;
+            }
+            
+            .App {
+                max-width: 100%;
+            }
+            
+            .boxes-container {
+                flex-direction: row;
+                margin-bottom: 15px;
+            }
+          }
 
