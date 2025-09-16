@@ -145,8 +145,8 @@ function App() {
           </>
         ) : (
           <>
-            <div className="box">{result[1]}</div>
-            <div className="box">{result[2]}</div>
+            <div className="left box">{result[1]}</div>
+            <div className="right box">{result[2]}</div>
           </>
         )}
       </div>

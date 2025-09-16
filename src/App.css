@@ -21,7 +21,7 @@ h1 {
 
 .box {
   flex: 1;
-  padding: 15px 10px;
+  padding: 15px 20px;
   border: 2px solid #ddd;
   border-radius: 8px;
   font-size: 27px;/*27*/
@@ -31,14 +31,23 @@ h1 {
   min-height: 20px;/*20*/
   display: flex;
   align-items: center;
-  justify-content: center;
+  /*justify-content: center;*/
   transition: all 0.3s ease;
 }
 
 
+.left.box {
+  justify-content: right;
+}
+
+.right.box {
+  justify-content: left;
+}
+
 
 .single.box {
   min-width: 30px;
+  justify-content: center;
   
 }
 
@@ -66,7 +75,7 @@ h1 {
   background-color: white;
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  min-width: 300px;/*500*/
+  min-width: 320px;/*500*/
 }
 
 h1 {
@@ -78,12 +87,12 @@ h1 {
   display: flex;
   justify-content: space-between;
   margin-bottom: 40px;
-  gap: 20px;
+  gap: 7px;
 }
 
 .box {
   flex: 1;
-  padding: 3px 2px;
+  padding: 3px 1px;
   border: 2px solid #ddd;
   border-radius: 8px;
   font-size: 20px;/*27*/
@@ -93,14 +102,24 @@ h1 {
   min-height: 10px;/*20*/
   display: flex;
   align-items: center;
-  justify-content: center;
+  /*justify-content: center;*/
   transition: all 0.3s ease;
 }
 
 
 
+.left.box {
+  justify-content: right;
+}
+
+.right.box {
+  justify-content: left;
+}
+
+
 .single.box {
   min-width: 30px;
+  justify-content: center;
   
 }
 
