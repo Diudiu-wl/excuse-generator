@@ -68,6 +68,7 @@ positive_neutral_decorations, 不对劲
 positive_neutral_decorations, 什么情况
 positive_neutral_decorations, 好烦
 positive_neutral_decorations, 有点烦
+positive_neutral_decorations, 真猥琐
 
 negative_person_nouns, 队友
 negative_person_nouns, 野人
@@ -82,7 +83,6 @@ negative_person_decorations, 没点意识
 negative_person_decorations, 没意识
 negative_person_decorations, 太慢
 negative_person_decorations, 太烂
-negative_person_decorations, 真猥琐
 negative_person_decorations, 真能送
 negative_person_decorations, 乱跑
 negative_person_decorations, 瞎打
