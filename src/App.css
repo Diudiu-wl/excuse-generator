@@ -45,10 +45,6 @@ h1 {
   
 }
 
-.empty-box {
-  background-color: transparent;
-  border: 2px dashed #ddd;
-}
 
 .generate-btn {
   padding: 12px 30px;
@@ -66,100 +62,145 @@ h1 {
 }
 
 
-      /* 平板设备适配 */
+  /* 平板设备适配 */
         @media (max-width: 1024px) {
             .App {
-                min-width: 90%;
+                padding: 25px;
+            }
+            
+            h1 {
+                font-size: 2.2rem;
+            }
+            
+            .box {
+                padding: 25px 15px;
+                font-size: 24px;
+                min-height: 110px;
+            }
+        }
+        
+        /* 手机设备适配 - 关键部分 */
+        @media (max-width: 768px) {
+            body {
                 padding: 15px;
+            }
+            
+            header {
+                margin-bottom: 20px;
             }
             
             h1 {
                 font-size: 1.8rem;
-                margin-bottom: 20px;
             }
             
-            .box {
-                padding: 20px 15px;
-                font-size: 24px;
+            .description {
+                font-size: 0.95rem;
             }
-        }
-        
-        /* 手机设备适配 */
-        @media (max-width: 768px) {
+            
             .App {
-                min-width: unset;
-                width: 100%;
-                padding: 15px 10px;
-                border-radius: 8px;
+                padding: 20px 15px;
+                border-radius: 12px;
             }
             
-            h1 {
-                font-size: 1.5rem;
-                margin-bottom: 20px;
-            }
-            
+            /* 保持横向排列但调整间距 */
             .boxes-container {
-                flex-direction: column;
                 gap: 15px;
-                margin-bottom: 20px;
+                margin-bottom: 25px;
             }
             
             .box {
                 padding: 20px 10px;
-                font-size: 20px;
-                width: 100%;
-            }
-            
-            .single.box {
-                min-width: unset;
+                font-size: 18px;
+                min-height: 90px;
+                border-radius: 10px;
             }
             
             .generate-btn {
-                width: 100%;
-                padding: 15px;
+                padding: 14px 30px;
                 font-size: 16px;
+            }
+            
+            .features {
+                margin-top: 30px;
+            }
+            
+            .feature {
+                width: 150px;
+                padding: 15px;
+            }
+            
+            .feature i {
+                font-size: 1.7rem;
             }
         }
         
         /* 小屏手机适配 */
         @media (max-width: 480px) {
-            body {
-                padding: 10px;
+            h1 {
+                font-size: 1.5rem;
+            }
+            
+            .description {
+                font-size: 0.9rem;
             }
             
             .App {
-                padding: 15px 8px;
+                padding: 15px 10px;
             }
             
-            h1 {
-                font-size: 1.3rem;
-                margin-bottom: 15px;
+            /* 进一步调整但保持横向排列 */
+            .boxes-container {
+                gap: 10px;
+                margin-bottom: 20px;
             }
             
             .box {
                 padding: 15px 8px;
-                font-size: 18px;
+                font-size: 16px;
+                min-height: 80px;
             }
             
             .generate-btn {
-                padding: 12px;
+                padding: 12px 25px;
                 font-size: 15px;
+            }
+            
+            .feature {
+                width: 130px;
+                padding: 12px;
+                font-size: 0.9rem;
+            }
+            
+            .feature i {
+                font-size: 1.5rem;
+                margin-bottom: 10px;
             }
         }
         
-        /* 防止横屏时元素过大 */
+        /* 超小屏手机适配 */
+        @media (max-width: 360px) {
+            .box {
+                font-size: 14px;
+                padding: 12px 5px;
+            }
+            
+            .boxes-container {
+                gap: 8px;
+            }
+        }
+        
+        /* 横屏模式优化 */
         @media (max-height: 500px) and (orientation: landscape) {
             body {
                 padding: 10px;
             }
             
-            .App {
+            .container {
                 max-width: 100%;
             }
             
             .boxes-container {
-                flex-direction: row;
                 margin-bottom: 15px;
             }
-          }
+        }
 
