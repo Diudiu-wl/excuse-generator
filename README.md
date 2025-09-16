@@ -1,3 +1,3 @@
 原项目：https://github.com/arainwong/excuse-generator
 
-本项目在参考原项目后创建
+本项目是原项目的web实现
