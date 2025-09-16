@@ -62,22 +62,7 @@ h1 {
 }
 
 
-  /* 平板设备适配 */
-        @media (max-width: 1024px) {
-            .App {
-                padding: 25px;
-            }
-            
-            h1 {
-                font-size: 2.2rem;
-            }
-            
-            .box {
-                padding: 25px 15px;
-                font-size: 24px;
-                min-height: 110px;
-            }
-        }
+ 
         
         /* 手机设备适配 - 关键部分 */
         @media (max-width: 768px) {
@@ -134,73 +119,5 @@ h1 {
             }
         }
         
-        /* 小屏手机适配 */
-        @media (max-width: 480px) {
-            h1 {
-                font-size: 1.5rem;
-            }
-            
-            .description {
-                font-size: 0.9rem;
-            }
-            
-            .App {
-                padding: 15px 10px;
-            }
-            
-            /* 进一步调整但保持横向排列 */
-            .boxes-container {
-                gap: 10px;
-                margin-bottom: 20px;
-            }
-            
-            .box {
-                padding: 15px 8px;
-                font-size: 16px;
-                min-height: 80px;
-            }
-            
-            .generate-btn {
-                padding: 12px 25px;
-                font-size: 15px;
-            }
-            
-            .feature {
-                width: 130px;
-                padding: 12px;
-                font-size: 0.9rem;
-            }
-            
-            .feature i {
-                font-size: 1.5rem;
-                margin-bottom: 10px;
-            }
-        }
-        
-        /* 超小屏手机适配 */
-        @media (max-width: 360px) {
-            .box {
-                font-size: 14px;
-                padding: 12px 5px;
-            }
-            
-            .boxes-container {
-                gap: 8px;
-            }
-        }
-        
-        /* 横屏模式优化 */
-        @media (max-height: 500px) and (orientation: landscape) {
-            body {
-                padding: 10px;
-            }
-            
-            .container {
-                max-width: 100%;
-            }
-            
-            .boxes-container {
-                margin-bottom: 15px;
-            }
-        }
+     
 
