@@ -50,6 +50,7 @@ positive_person_decorations, 真卡
 positive_person_decorations, 卡比啊
 positive_person_decorations, 怎么不掉线？
 positive_person_decorations, 为啥不掉线？
+positive_person_decorations, 真猥琐
 
 positive_object_nouns, 对面网络
 positive_object_nouns, 对面配合
@@ -73,7 +74,6 @@ positive_neutral_decorations, 不对劲
 positive_neutral_decorations, 什么情况
 positive_neutral_decorations, 好烦
 positive_neutral_decorations, 有点烦
-positive_neutral_decorations, 真猥琐
 
 negative_person_nouns, 队友
 negative_person_nouns, 野人
@@ -88,6 +88,7 @@ negative_person_decorations, 没点意识
 negative_person_decorations, 没意识
 negative_person_decorations, 太慢
 negative_person_decorations, 太烂
+negative_person_decorations, 真猥琐
 negative_person_decorations, 真能送
 negative_person_decorations, 乱跑
 negative_person_decorations, 瞎打
