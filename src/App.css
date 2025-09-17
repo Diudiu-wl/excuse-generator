@@ -138,14 +138,14 @@ h1 {
   color: #333;
 }
 
- .github-button {
+.github-button {
     display: flex;
     align-items: center;
     justify-content: center;
     background-color: #3498db; /* 蓝色背景 */
     color: white;
-    padding: 10px 20px;
-    border-radius: 8px;
+    padding: 1px 20px;
+    border-radius: 9px;
     text-decoration: none;
     font-size: 16px;
     font-weight: bold;
@@ -160,9 +160,10 @@ h1 {
   }
   
   .github-button img {
-    width: 20px;
-    height: 20px;
+    width: 30px;
+    height: 30px;
     margin-right: 8px;
+    margin-top: 8px;
   }
 
 
