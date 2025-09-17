@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import Papa from "papaparse";
 import "./App.css";
 
@@ -12,6 +12,46 @@ function App() {
   const [result, setResult] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
+
+
+   const [open, setOpen] = useState(false);
+  const [selected, setSelected] = useState(null);
+
+  const buttonRef = useRef(null);
+  const panelRef = useRef(null);
+
+  const handleToggle = () => {
+    setOpen((prev) => !prev);
+    if (!open) setSelected(null); // 打开时重置内容
+  };
+
+  const handleSelect = (name) => {
+    setSelected(name);
+  };
+
+  // 关键：点击页面其他区域关闭面板
+  useEffect(() => {
+    if (!open) return;
+
+    const handleClickOutside = (e) => {
+      // 如果点击的区域不在按钮和面板内，则关闭
+      if (
+        buttonRef.current &&
+        !buttonRef.current.contains(e.target) &&
+        panelRef.current &&
+        !panelRef.current.contains(e.target)
+      ) {
+        setOpen(false);
+        setSelected(null);
+      }
+    };
+
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, [open]);
+
 
 
   const randomChoice = (arr) => arr[Math.floor(Math.random() * arr.length)];
@@ -125,7 +165,7 @@ function App() {
     setResult(generate());
   };
 
-  // 初次加载生成一次
+  //初次加载生成一次
   useEffect(() => {
     if (excuseDict) handleGenerate();
   }, [excuseDict]);
@@ -133,6 +173,7 @@ function App() {
   if (!excuseDict) return <div className="app">加载中...</div>;
 
   const isSpecial = result[0] === "special";
+  
 
   return (
     <div className="App">
@@ -153,10 +194,66 @@ function App() {
       <button className="generate-btn" onClick={handleGenerate}>
         随机生成
       </button>
+
+    <button
+        ref={buttonRef}
+        className="about-button"
+        onClick={handleToggle}
+      >
+        关于作者
+      </button>
+
+      {open && (
+        <div
+          ref={panelRef}
+          className={`about-panel ${selected ? "about-panel-expanded" : ""}`}
+        >
+          {!selected && (
+            <div className="link-list">
+              <p onClick={() => handleSelect("arainwong")}>arainwong</p>
+              <p onClick={() => handleSelect("tapioca")}>tapioca</p>
+            </div>
+          )}
+
+          {selected === "arainwong" && (
+            <div className="detail">
+              <p>arainwong (Ω7):</p>
+              <video
+                className="media"  // 关键：添加 class
+                src={`${process.env.PUBLIC_URL}/images/arainwong.mp4`}  // public 下的相对路径
+                autoPlay              // 自动播放
+                loop                  // 循环播放
+                muted                 // 静音，保证自动播放
+                playsInline           // 移动端内联播放
+              />
+              <p>畅玩斯普拉遁，感悟痛苦人生。</p>
+               {/* 这里是 GitHub 关注按钮 */}
+              <a href="https://github.com/arainwong" target="_blank" rel="noopener noreferrer" className="github-button">
+              <img src="https://cdn-icons-png.flaticon.com/512/25/25231.png" alt="GitHub Logo" />
+              Follow Me
+              </a>
+            </div>
+          )}
+
+          {selected === "tapioca" && (
+            <div className="detail">
+              <p>tapioca:</p>
+              <img src={`${process.env.PUBLIC_URL}/images/tapioca.jpeg`} alt="tapioca" />
+              <p>日常破防的鱿鱼。</p>
+               {/* 这里是 GitHub 关注按钮 */}
+              <a href="https://github.com/Diudiu-wl" target="_blank" rel="noopener noreferrer" className="github-button">
+              <img src="https://cdn-icons-png.flaticon.com/512/25/25231.png" alt="GitHub Logo" />
+              Follow Me
+              </a>
+            </div>
+          )}
+        </div>
+      )}
     </div>
   );
 }
 
 export default App;
+
 
 

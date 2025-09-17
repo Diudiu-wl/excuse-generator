@@ -70,6 +70,102 @@ h1 {
 }
 
 
+/* 右上角按钮 */
+.about-button {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  background-color: #4a90e2;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 14px;
+  z-index: 1000;
+}
+
+/* 小界面基础样式 */
+.about-panel {
+  position: fixed;
+  top: 60px; /* 按钮下面一点 */
+  right: 20px;
+  width: 150px;
+  background: #fff;
+  border: 1px solid #ccc;
+  border-radius: 12px;
+  padding: 12px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.15);
+  transition: all 0.3s ease;
+  z-index: 999;
+}
+
+/* 展开后的更大尺寸 */
+.about-panel-expanded {
+  width: 250px;
+  min-height: 250px;
+}
+
+/* 链接列表 */
+.link-list p {
+  margin: 8px 0;
+  color: #0077cc;
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+.link-list p:hover {
+  color: #005fa3;
+}
+
+/* 详细内容 */
+.detail {
+  text-align: left;
+}
+
+.detail img,
+.detail video.media {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+  margin-bottom: 8px;
+}
+
+
+
+.detail p {
+  font-size: 19px;
+  color: #333;
+}
+
+ .github-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #3498db; /* 蓝色背景 */
+    color: white;
+    padding: 10px 20px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: bold;
+    transition: background 0.3s ease;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    margin-bottom: 10px; /* 与下方内容保持间距 */
+    width: fit-content;
+  }
+  
+  .github-button:hover {
+    background-color: #2980b9; /* 悬停变色 */
+  }
+  
+  .github-button img {
+    width: 20px;
+    height: 20px;
+    margin-right: 8px;
+  }
+
+
   @media (max-width: 768px) {
   .App {
   text-align: center;
