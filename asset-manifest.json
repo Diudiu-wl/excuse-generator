@@ -1,13 +1,13 @@
 {
   "files": {
     "main.css": "/excuse-generator/static/css/main.3c530754.css",
-    "main.js": "/excuse-generator/static/js/main.a29fe048.js",
+    "main.js": "/excuse-generator/static/js/main.a5763d5c.js",
     "index.html": "/excuse-generator/index.html",
     "main.3c530754.css.map": "/excuse-generator/static/css/main.3c530754.css.map",
-    "main.a29fe048.js.map": "/excuse-generator/static/js/main.a29fe048.js.map"
+    "main.a5763d5c.js.map": "/excuse-generator/static/js/main.a5763d5c.js.map"
   },
   "entrypoints": [
     "static/css/main.3c530754.css",
-    "static/js/main.a29fe048.js"
+    "static/js/main.a5763d5c.js"
   ]
 }
