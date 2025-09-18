@@ -250,18 +250,34 @@ function App() {
             </div>
           )}
 
+          {/*
           {selected === "arainwong" && (
             <div className="detail">
               <p>arainwong (Ω7):</p>
               <video
-                className="media"  // 关键：添加 class
-                src={`${process.env.PUBLIC_URL}/images/arainwong.mp4`}  // public 下的相对路径
-                autoPlay              // 自动播放
-                loop                  // 循环播放
-                muted                 // 静音，保证自动播放
-                playsInline           // 移动端内联播放
+                className="media" 
+                src={`${process.env.PUBLIC_URL}/images/arainwong.mp4`}  
+                autoPlay              
+                loop                  
+                muted                 
+                playsInline          
               />
               <p>畅玩斯普拉遁，感悟痛苦人生。</p>
+               
+              <a href="https://github.com/arainwong" target="_blank" rel="noopener noreferrer" className="github-button">
+              <img src="https://cdn-icons-png.flaticon.com/512/25/25231.png" alt="GitHub Logo" />
+              Follow Me
+              </a>
+            </div>
+          )}
+          */}
+
+
+          {selected === "arainwong" && (
+            <div className="detail">
+              <p>arainwong (Ω7):</p>
+              <img src={`${process.env.PUBLIC_URL}/images/arian.gif`} alt="arianwong" />
+              <p>我没素质啊。</p>
                {/* 这里是 GitHub 关注按钮 */}
               <a href="https://github.com/arainwong" target="_blank" rel="noopener noreferrer" className="github-button">
               <img src="https://cdn-icons-png.flaticon.com/512/25/25231.png" alt="GitHub Logo" />
