@@ -277,7 +277,7 @@ function App() {
             <div className="detail">
               <p>arainwong (Ω7):</p>
               <img src={`${process.env.PUBLIC_URL}/images/arian.gif`} alt="arianwong" />
-              <p>我没素质啊。</p>
+              <p>我没素质啊啊。</p>
                {/* 这里是 GitHub 关注按钮 */}
               <a href="https://github.com/arainwong" target="_blank" rel="noopener noreferrer" className="github-button">
               <img src="https://cdn-icons-png.flaticon.com/512/25/25231.png" alt="GitHub Logo" />
