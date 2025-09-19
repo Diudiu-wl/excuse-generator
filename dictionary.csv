@@ -4,6 +4,8 @@ special, 声音听不清
 special, 手柄有延迟
 special, 手柄漂移了
 special, 我手柄又漂移了
+special, 我靠！手柄断触
+special, 刚换手柄还没适应
 special, 游戏掉帧
 special, 注意力不集中了
 special, 有点困了
@@ -12,18 +14,19 @@ special, 手机响了
 special, 猫跳手柄了
 special, 猫挡我显示器了
 special, 猫把我的NS弄掉了
-special, 网络太卡了
+special, 猫太吵了
+special, 网络好卡
 special, 网络延迟啊
 special, 椅子太硬了
 special, 桌子太晃了
 special, 耳机坏了
+special, 手机响了
 special, 屏幕看不清
 special, 累了反应有点慢了
 special, 不对劲
 special, 任天堂削一下啊
 special, 任天堂修修网
-special, 别太演了
-special, 演员吧？都想笑了
+special, 演员啊！
 special, 真的无语
 special, 我笑了
 special, 有病啊
@@ -34,6 +37,15 @@ special, 都在干嘛呢
 special, 在干嘛呢
 special, 被做局了
 special, 被任天堂做局了
+special, 手有点冷
+special, 刚睡醒
+special, NS烫手
+special, 天气太冷了
+special, 天气太热了
+special, 我妈叫我了
+special, 灵敏度忘改了
+special, 有人打电话给我
+special, 刚刚黑客入侵了
 
 
 positive_person_nouns, 对面
@@ -48,7 +60,7 @@ positive_person_decorations, 有问题啊
 positive_person_decorations, 好苟啊
 positive_person_decorations, 卡比
 positive_person_decorations, 怎么不掉线？
-positive_person_decorations, 真猥琐
+
 
 positive_object_nouns, 对面网络
 positive_object_nouns, 对面配合
@@ -97,7 +109,7 @@ negative_person_decorations, 不如挂机
 negative_person_decorations, 能不能拔线？
 negative_person_decorations, 是这分段吗
 negative_person_decorations, 没事吧？
-negative_person_decorations, 别叫了
+negative_person_decorations, 别叫
 
 negative_object_nouns, 这网络
 negative_object_nouns, 配合
@@ -109,6 +121,7 @@ negative_object_nouns, 这乱数
 negative_object_nouns, 武器平衡
 negative_object_nouns, 编成
 negative_object_nouns, 这大招
+negative_object_nouns, 这武器
 negative_object_nouns, 这副武器
 negative_object_nouns, aim
 negative_object_nouns, 操作
@@ -141,3 +154,4 @@ negative_neutral_decorations, 有点烂
 negative_neutral_decorations, 不对劲
 negative_neutral_decorations, 的错
 negative_neutral_decorations, 好差
+negative_neutral_decorations, 真猥琐
