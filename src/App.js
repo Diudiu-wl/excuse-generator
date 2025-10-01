@@ -3,7 +3,7 @@ import Papa from "papaparse";
 import "./App.css";
 
 function App() {
-  //概率初始为0，等CSV加载后计算
+
   const [positiveProb, setPositiveProb] = useState(0);
   const [neutralProb, setNeutralProb] = useState(0);
   const [personProb, setPersonProb] = useState(0);
@@ -23,19 +23,18 @@ function App() {
 
   const handleToggle = () => {
     setOpen((prev) => !prev);
-    if (!open) setSelected(null); // 打开时重置内容
+    if (!open) setSelected(null); //打开时重置内容
   };
 
   const handleSelect = (name) => {
     setSelected(name);
   };
 
-  // 关键：点击页面其他区域关闭面板
   useEffect(() => {
     if (!open) return;
 
     const handleClickOutside = (e) => {
-      // 如果点击的区域不在按钮和面板内，则关闭
+      
       if (
         buttonRef.current &&
         !buttonRef.current.contains(e.target) &&
@@ -133,7 +132,7 @@ function App() {
         });
 
         setExcuseDict(groupedData);
-        computeProbs(groupedData);   // 计算概率
+        computeProbs(groupedData);   
         setError(null);
       } catch (err) {
         console.error('加载CSV文件失败:', err);
